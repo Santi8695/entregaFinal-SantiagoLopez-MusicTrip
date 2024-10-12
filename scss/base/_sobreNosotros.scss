@@ -1,0 +1,196 @@
+/*----------------------------------------------*/
+/*|    Estilos de la pagina Sobre Nosotros     |*/
+/*----------------------------------------------*//*Secciones principales de Sobre Nosotros*/
+.historia,
+.horarios,
+.ubicacion {
+    display: inline-block;
+    background-color: $colorTerceario;
+    text-align: center;
+    margin: 24px;
+}
+
+.historia {
+    border: 2px solid $bordes;
+
+    p {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        padding: 8px;
+
+        .musicTrip {
+            color: #d66800;
+            font-weight: bolder;
+            font-family: Montserrat;
+            font-size: 14px;
+        }
+
+        .destacado {
+            color: #000000;
+            font-weight: bolder;
+            font-family: Montserrat;
+            font-size: 14px;
+            text-decoration: underline;
+        }
+    }
+}
+
+/*subtitulo que acompaña la historia de la pagina*/
+.subtitulosSobreNosotros {
+    background-color: $colorSecundario;
+    margin: 0;
+    padding: 16px;
+    border-bottom: 2px solid $bordes;
+}
+
+/*subtitulo que acompaña la tabla de horarios*/
+.subtitulosSobreNosotrosHor {
+    background-color: $colorSecundario;
+    margin: 0px;
+    padding: 8px;
+    border-left: 2px solid $bordes;
+    border-right: 2px solid $bordes;
+    border-top: 2px solid $bordes;
+}
+
+/*subtitulo que acompaña la ubicacion*/
+.subtitulosSobreNosotrosUbi {
+    background-color: $colorSecundario;
+    margin: 0;
+    border: 2px solid $bordes;
+}
+
+/*Estilos de la Tabla de Horarios*/
+table {
+    border: 2px solid $bordes;
+    margin: auto;
+    width: 300px;
+
+    tr td {
+        border: 1px solid $bordes;
+        fill: $bordes;
+        text-align: center;
+        padding: 2px;
+        font-size: 0.6rem;
+    }
+}
+
+.ubicacion {
+    @include grid (1fr, 1fr);
+
+    iframe {
+        width: 100%;
+        height: 300px
+    }
+}
+
+.slogan {
+    @include flex (column);
+
+    h3 {
+        color: $texto;
+        text-align: center;
+        font-size: 2rem;
+        margin: 0 2px 4px 2px;
+    }
+
+    h4 {
+        color: $texto;
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    img {
+        width: 90vw;
+        height: 40vh;
+        margin: auto;
+    }
+}
+
+/*Media Query Sobre Nosotros (tablet)*/
+@media (min-width: 600px) {
+
+    /*Tabla de Horarios*/
+    .horarios {
+        @include flex (column);
+        margin: 2px auto;
+        width: 90%;
+    }
+
+    /*Historia de la pagina*/
+    .historia p {
+        padding: 8px;
+        font-size: 1.2rem;
+
+        span.musicTrip {
+            font-size: 1rem;
+        }
+
+        .destacado {
+            font-size: 0.9rem;
+        }
+    }
+
+    table {
+        width: 100%;
+
+        tr td {
+            padding: 4px;
+            font-size: 1rem;
+        }
+    }
+
+    .ubicacion {
+        @include grid (1fr, 1fr);
+    }
+
+    .slogan h3 {
+        font-size: 2.2rem;
+    }
+
+    .slogan h4 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (min-width:1024px){
+     /*Estilos Sobre Nosotros*/
+     .horarios {
+        @include flex (column);
+        margin: 0 auto;
+    }
+
+    .historia p {
+        padding: 8px;
+        font-size: 1.4rem;
+        span.musicTrip {
+            font-size: 1.3rem;
+        }
+        .destacado {
+            font-size: 19px;
+        }
+    }
+
+    table tr td {
+        padding: 4px;
+        font-size: 1.3em;
+    }
+
+    .ubicacion {
+        @include grid (1fr, 1fr);
+    }
+
+    .slogan {
+        h3 {
+            font-size: 2.4rem;
+        }
+        h4 {
+            font-size: 2rem;
+        }
+        img {
+            width: 40vw;
+            height: 500px;
+            margin: auto;
+        }    
+    }
+
+}
